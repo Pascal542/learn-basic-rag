@@ -1,0 +1,9 @@
+.venv/
+.chroma/
+__pycache__/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.agents/

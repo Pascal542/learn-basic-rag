@@ -1,6 +1,6 @@
 # Learn Basic RAG
 
-Un RAG local y pequeño para **leer el código, ejecutarlo y entender el recorrido de una pregunta**. Usa LangChain, Chroma, Ollama y Streamlit. Los documentos son ficticios: no contiene datos de una empresa ni requiere una API de pago.
+Un RAG local y pequeño para **leer el código, ejecutarlo y entender el recorrido de una pregunta**. Usa LangChain, Chroma, Ollama y Streamlit
 
 ## Qué ocurre
 
@@ -40,7 +40,7 @@ uv run python -m scripts.ask
 
 `search` muestra evidencia; `ask` genera una respuesta. No reconstruyas el índice por cada pregunta.
 
-## Ruta de lectura: menos de una hora como objetivo
+## Ruta de lectura:
 
 La duración depende de tus conocimientos de Python y no incluye instalaciones. Sigue este orden; `examples/` es opcional:
 
@@ -53,7 +53,7 @@ La duración depende de tus conocimientos de Python y no incluye instalaciones. 
 | `src/learn_basic_rag/generation.py` | Construye los mensajes con evidencia y llama a Qwen. |
 | `scripts/ask.py` y `ui/app.py` | Conectan las mismas funciones desde terminal o chat. |
 
-Tres ideas para revisar en el código:
+Tres conceptos para revisar en el código:
 
 - `Document` guarda texto y metadatos: todavía no es un vector.
 - `chunk_size=500` y `chunk_overlap=80` se miden en **caracteres**, no tokens. Son valores didácticos, no parámetros optimizados. EmbeddingGemma admite entradas de hasta 2048 tokens; el prefijo también cuenta.
@@ -89,6 +89,6 @@ uv run python -m scripts.build_index --reset
 
 ## Límites y autoría
 
-Demo educativa de flujo fijo, **no un agente ni un sistema productivo**. No incluye usuarios/permisos, OCR, PDF, reranker, verificación automática de citas, evaluación sistemática, sincronización incremental ni control exacto de tokens. No la expongas a internet ni uses datos confidenciales. El prompt no elimina alucinaciones ni garantiza defensa contra instrucciones maliciosas en documentos.
+Demo educativa de flujo fijo, **no un agente ni un sistema productivo**. No incluye usuarios/permisos, OCR, PDF, reranker, verificación automática de citas, evaluación sistemática, sincronización incremental ni control exacto de tokens. El prompt no elimina alucinaciones ni garantiza defensa contra instrucciones maliciosas en documentos.
 
-Desarrollado como práctica guiada con asistencia de IA. `.venv/`, `.chroma/` y secretos locales no deben publicarse; sí `pyproject.toml`, `uv.lock`, código y documentos ficticios. El código de este repositorio se distribuye bajo la [licencia MIT](LICENSE). Las dependencias y modelos conservan sus respectivas licencias.
+El código de este repositorio se distribuye bajo la [licencia MIT](LICENSE). Las dependencias y modelos conservan sus respectivas licencias.
